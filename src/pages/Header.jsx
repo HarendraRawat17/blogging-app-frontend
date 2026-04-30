@@ -98,6 +98,11 @@ function Header({ onAddClick, onLogin, isLoggedIn, onLogout }) {
               <NavLink to="/about" onClick={() => setIsMenuOpen(false)} className={mobileLinkClass}>About</NavLink>
               <NavLink to="/contact" onClick={() => setIsMenuOpen(false)} className={mobileLinkClass}>Contact</NavLink>
               {isLoggedIn && <NavLink to="/dashboard" onClick={() => setIsMenuOpen(false)} className={mobileLinkClass}> Dashboard </NavLink>}
+
+              <button onClick={onLogin} className="mb-2 text-left ml-6 text-gray-500 font-semi-bold text-lg w-25 cursor-pointer">Log In</button>
+              <button onClick={onAddClick} className="px-2 py-2 text-sm font-bold text-white bg-[#8BB004] rounded-full hover:bg-[#7aa003] shadow-md cursor-pointer transition-all hover:scale-105">
+                Get Started
+              </button>
             </div>
           </div>
         </div>
