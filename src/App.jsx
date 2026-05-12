@@ -13,11 +13,11 @@ function App() {
   // 1. Single 'view' state to manage the flow: 
   // 'newPage' | 'signup' | 'otp' | 'login' | 'dashboard'
  const [view, setView] = useState(() => {
-  return localStorage.getItem('info') ? 'dashboard' : 'newPage';
+  return localStorage.getItem('token') ? 'dashboard' : 'newPage';
 });
 
 
-const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('info'));
+const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
   
   // 2. State to hold data between steps (e.g., email from Signup to OTP)
   const [userData, setUserData] = useState(null);
@@ -47,15 +47,15 @@ const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('info'));
     setView('login');  // Move to Login after OTP
   };
 
-  const handleLoginSuccess = (info) => {
-    localStorage.setItem('info', info);
+  const handleLoginSuccess = (token) => {
+    localStorage.setItem('token', token);
     setIsLoggedIn(true); // Update the boolean!
     setView('newPage');  // Close any open modals
     navigate("/dashboard");
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('info');
+    localStorage.removeItem('token');
     localStorage.removeItem('userId');
     setIsLoggedIn(false); // Update the boolean!
     setView('newPage') // it Reset the view to def.

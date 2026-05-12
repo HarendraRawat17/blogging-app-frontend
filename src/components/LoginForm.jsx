@@ -12,8 +12,12 @@ function LoginForm({ onClose, onSuccess }) {
     e.preventDefault();
     try {
       const response = await api.post('user/login', form);
+
+      // save locally
       localStorage.setItem("userId", response.data.userId); 
       localStorage.setItem('token', response.data.token);
+
+      // passed the same token value up to app.js
       onSuccess(response.data.token); 
       toast.success("Welcome back!");
     } catch (error) {
