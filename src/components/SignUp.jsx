@@ -33,6 +33,7 @@ function SignUp({ onClose, onSuccess, onLogin }) {
         <div className="relative hidden w-[70%] lg:block">
           <img 
             src={coverImg} 
+            loading='lazy'
             alt="Blogging workspace" 
             className="h-full w-full object-cover"
           />
