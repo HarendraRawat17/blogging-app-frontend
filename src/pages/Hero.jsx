@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './Home'
 import Contact from "./Contact"
-import About from './About';
+import AboutSection from './About';
 import { Route, Routes } from "react-router-dom";
 import Dashboard from '../components/Dashboard';
 import BlogEditor from '../components/BlogModal';
