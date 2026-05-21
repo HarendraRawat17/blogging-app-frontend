@@ -37,3 +37,6 @@ export default Hero
 
 // how  i can secure my dashboard route
 // i didn't want anyone to open dashboard without login, but i have a problem that my login form is not a route, it's modal
+
+
+// ui changes
